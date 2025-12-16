@@ -1,0 +1,32 @@
+{
+  "name": "typof",
+  "version": "1.0.0",
+  "description": "Extract the valid types.",
+  "license": "MIT",
+  "homepage": "https://github.com/keift/typof",
+  "bugs": "https://github.com/keift/typof/issues",
+  "main": "./dist/main.js",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.ts",
+  "scripts": {
+    "tests": "bun run lint && bun test",
+    "build": "tsup",
+    "prettier": "prettier --write ./",
+    "lint": "eslint ./"
+  },
+  "dependencies": {
+    "@types/node": "latest"
+  },
+  "devDependencies": {
+    "neatlint": "latest",
+    "prettier": "latest",
+    "tsup": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keift/typof"
+  },
+  "keywords": [
+    "type"
+  ]
+}

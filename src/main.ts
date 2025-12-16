@@ -1,0 +1,105 @@
+import { isObject } from './utils/isObject.util';
+
+import type { Types } from './types/Types.type';
+
+export const typof = (value: unknown): Types[] => {
+  const types: Types[] = [];
+
+  if (typeof value === 'string') {
+    value = value.trim();
+
+    types.push('string');
+
+    if (Number.isFinite(Number(value))) {
+      const number = Number(value);
+
+      types.push('number');
+
+      if (Number.isInteger(number)) {
+        types.push('integer');
+      } else if (!Number.isInteger(number)) {
+        types.push('float');
+      }
+    }
+
+    if (value === 'true' || value === 'false') types.push('boolean');
+    console.log(Array.isArray(JSON.parse(JSON.stringify(value))));
+    if (isObject(value) && !Array.isArray(JSON.parse(JSON.stringify(value)))) types.push('object');
+
+    if (isObject(value) && Array.isArray(JSON.parse(JSON.stringify(value)))) types.push('array');
+
+    if (value === 'null') types.push('null');
+
+    if (value === 'undefined') types.push('undefined');
+  } else if (typeof value === 'number') {
+    if (!Number.isFinite(value)) return types;
+
+    types.push('number');
+
+    if (Number.isInteger(value)) {
+      types.push('integer');
+    } else if (!Number.isInteger(value)) {
+      types.push('float');
+    }
+  } else if (typeof value === 'boolean') {
+    types.push('boolean');
+  } else if (isObject(value) && !Array.isArray(JSON.parse(JSON.stringify(value)))) {
+    types.push('object');
+  } else if (isObject(value) && Array.isArray(JSON.parse(JSON.stringify(value)))) {
+    types.push('array');
+  } else if (value === null) {
+    types.push('null');
+  } else if (typeof value === 'undefined') {
+    types.push('undefined');
+  }
+
+  return types;
+};
+
+export const string = (value: unknown) => {
+  // eslint-disable-next-line no-restricted-syntax
+  return typof(value).includes('object') || typof(value).includes('array') ? JSON.stringify(value) : String(value);
+};
+
+export const number = (value: unknown) => {
+  return typof(value).includes('number') ? Number(value) : NaN;
+};
+
+export const integer = (value: unknown) => {
+  return typof(value).includes('number') ? Number.parseInt(string(value)) : NaN;
+};
+
+export const float = number;
+
+export const boolean = (value: unknown) => {
+  if (typof(value).includes('boolean') && typof(value).includes('string')) {
+    if (value === 'true') return true;
+    if (value === 'false') return false;
+  } else return value;
+};
+
+export const object = (value: unknown) => {
+  if (typof(value).includes('object') && typof(value).includes('string')) {
+    return JSON.parse(value as string) as object;
+  } else return value;
+};
+
+export const array = (value: unknown) => {
+  if (typof(value).includes('array') && typof(value).includes('string')) {
+    return JSON.parse(value as string) as unknown[];
+  } else return value;
+};
+
+export const _null = (value: unknown) => {
+  if (typof(value).includes('null') && typof(value).includes('string')) {
+    return null;
+  } else return value;
+};
+
+export const _undefined = (value: unknown) => {
+  if (typof(value).includes('undefined') && typof(value).includes('string')) {
+    return undefined;
+  } else return value;
+};
+
+export type * from './barrels/Types.barrel';
