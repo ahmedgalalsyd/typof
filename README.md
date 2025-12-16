@@ -113,7 +113,7 @@ Extract the valid types.
 > | --------- | ------- | ------------------------------------ |
 > | value     |         | [String]<br/>Value to extract types. |
 >
-> returns [Types][]
+> returns [Types]\[]
 >
 > Example:
 >
