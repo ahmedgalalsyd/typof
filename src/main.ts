@@ -8,6 +8,8 @@ export const typof = (value: unknown): Types[] => {
   if (typeof value === 'string') {
     value = value.trim();
 
+    if (typeof value !== 'string') return types;
+
     types.push('string');
 
     if (Number.isFinite(Number(value))) {
@@ -23,10 +25,10 @@ export const typof = (value: unknown): Types[] => {
     }
 
     if (value === 'true' || value === 'false') types.push('boolean');
-    console.log(Array.isArray(JSON.parse(JSON.stringify(value))));
-    if (isObject(value) && !Array.isArray(JSON.parse(JSON.stringify(value)))) types.push('object');
 
-    if (isObject(value) && Array.isArray(JSON.parse(JSON.stringify(value)))) types.push('array');
+    if (isObject(value) && !Array.isArray(JSON.parse(value))) types.push('object');
+
+    if (isObject(value) && Array.isArray(JSON.parse(value))) types.push('array');
 
     if (value === 'null') types.push('null');
 
@@ -43,9 +45,9 @@ export const typof = (value: unknown): Types[] => {
     }
   } else if (typeof value === 'boolean') {
     types.push('boolean');
-  } else if (isObject(value) && !Array.isArray(JSON.parse(JSON.stringify(value)))) {
+  } else if (isObject(value) && !Array.isArray(value)) {
     types.push('object');
-  } else if (isObject(value) && Array.isArray(JSON.parse(JSON.stringify(value)))) {
+  } else if (isObject(value) && Array.isArray(value)) {
     types.push('array');
   } else if (value === null) {
     types.push('null');
