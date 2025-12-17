@@ -110,7 +110,7 @@ Extract the valid types.
 
 > | Parameter | Default | Description                          |
 > | --------- | ------- | ------------------------------------ |
-> | value     |         | [String]<br/>Value to extract types. |
+> | value     |         | Unknown<br/>Value to extract types. |
 >
 > returns [Types]\[]
 >
