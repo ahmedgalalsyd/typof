@@ -13,6 +13,8 @@ export const typof = (value: unknown): Types[] => {
 
     types.push('string');
 
+    if (value === '') return types;
+
     if (Number.isFinite(Number(value))) {
       const number = Number(value);
 
