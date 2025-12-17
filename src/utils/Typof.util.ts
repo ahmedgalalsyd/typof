@@ -75,10 +75,8 @@ export const number = (value: unknown) => {
 };
 
 export const integer = (value: unknown) => {
-  return typof(value).includes('number') ? Number.parseInt(string(value)) : NaN;
+  return typof(value).includes('number') ? Math.trunc(Number(value)) : NaN;
 };
-
-export const float = number;
 
 export const boolean = <Value>(value: Value): boolean | Value => {
   if (typof(value).includes('boolean') && typof(value).includes('string')) {

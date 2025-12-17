@@ -83,7 +83,6 @@ typof
 ├── string(value)
 ├── number(value)
 ├── integer(value)
-├── float(value)
 ├── boolean(value)
 ├── object(value)
 ├── array(value)
@@ -115,34 +114,171 @@ Infers types.
 > Example:
 >
 > ```typescript
-> typof('test'); // [ 'string' ]
+> typof('test'); // [ "string" ]
 >
-> typof('0'); // [ 'string', 'number', 'integer' ]
-> typof(0); // [ 'number', 'integer' ]
+> typof('0'); // [ "string", "number", "integer" ]
+> typof(0); // [ "number", "integer" ]
 >
-> typof('0.5'); // [ 'string', 'number', 'float' ]
-> typof(0.5); // [ 'number', 'float' ]
+> typof('0.5'); // [ "string", "number", "float" ]
+> typof(0.5); // [ "number", "float" ]
 >
-> typof('true'); // [ 'string', 'boolean' ]
-> typof(true); // [ 'boolean' ]
+> typof('true'); // [ "string", "boolean" ]
+> typof(true); // [ "boolean" ]
 >
-> typof('{"key": "value"}'); // [ 'string', 'object' ]
-> typof({ key: 'value' }); // [ 'object' ]
+> typof('{"key": "value"}'); // [ "string", "object" ]
+> typof({ key: 'value' }); // [ "object" ]
 >
-> typof('["test"]'); // [ 'string', 'array' ]
-> typof(['test']); // [ 'array' ]
+> typof('["test"]'); // [ "string", "array" ]
+> typof(['test']); // [ "array" ]
 >
-> typof('2025-01-01'); // [ 'string', 'date' ]
-> typof(new Date('2025-01-01')); // [ 'object', 'date' ]
+> typof('2025-01-01'); // [ "string", "date" ]
+> typof(new Date('2025-01-01')); // [ "object", "date" ]
 >
-> typof('null'); // [ 'string, 'null' ]
-> typof(null); // [ 'null' ]
+> typof('null'); // [ "string", "null" ]
+> typof(null); // [ "null" ]
 >
-> typof('undefined'); // [ 'string, 'undefined' ]
-> typof(undefined); // [ 'undefined' ]
+> typof('undefined'); // [ "string", "undefined" ]
+> typof(undefined); // [ "undefined" ]
 >
 > // Tests are as follows. (Is this an integer?)
 > if (typof(0).includes('integer')) console.log('This is an integer!');
+> ```
+
+<br/>
+
+`string(value)`
+
+Convert to string.
+
+> | Parameter | Default | Description                   |
+> | --------- | ------- | ----------------------------- |
+> | value     |         | Unknown<br/>Value to convert. |
+>
+> returns [String]
+>
+> Example:
+>
+> ```typescript
+> string(0.5); // "0.5"
+> string(true); // "true"
+> string({ key: 'value' }); // '{"key":"value"}'
+> string(['test']); // '["test"]'
+> string(new Date('2025-01-01')); // "2025-01-01T00:00:00.000Z"
+> string(null); // "null"
+> string(undefined); // "undefined"
+> ```
+
+<br/>
+
+`number(value)`
+
+Convert to number.
+
+> | Parameter | Default | Description                   |
+> | --------- | ------- | ----------------------------- |
+> | value     |         | Unknown<br/>Value to convert. |
+>
+> returns [Number]
+>
+> Example:
+>
+> ```typescript
+> number('0.5'); // 0.5
+> ```
+
+<br/>
+
+`integer(value)`
+
+Convert to integer.
+
+> | Parameter | Default | Description                   |
+> | --------- | ------- | ----------------------------- |
+> | value     |         | Unknown<br/>Value to convert. |
+>
+> returns [Number]
+>
+> Example:
+>
+> ```typescript
+> integer('0.5'); // 0
+> integer(0.5); // 0
+> ```
+
+<br/>
+
+`boolean(value)`
+
+Convert to boolean.
+
+> | Parameter | Default | Description                   |
+> | --------- | ------- | ----------------------------- |
+> | value     |         | Unknown<br/>Value to convert. |
+>
+> returns [Boolean] | Value
+>
+> Example:
+>
+> ```typescript
+> boolean('true'); // true
+> boolean(true); // true
+> boolean('test'); // "test"
+> ```
+
+<br/>
+
+`object(value)`
+
+Convert to object.
+
+> | Parameter | Default | Description                   |
+> | --------- | ------- | ----------------------------- |
+> | value     |         | Unknown<br/>Value to convert. |
+>
+> returns [Object] | Value
+>
+> Example:
+>
+> ```typescript
+> object('{"key":"value"}'); // { key: "value" }
+> object('["test"]'); // '["test"]'
+> ```
+
+<br/>
+
+`array(value)`
+
+Convert to array.
+
+> | Parameter | Default | Description                   |
+> | --------- | ------- | ----------------------------- |
+> | value     |         | Unknown<br/>Value to convert. |
+>
+> returns [Array] | Value
+>
+> Example:
+>
+> ```typescript
+> array('["test"]'); // [ "test" ]
+> array('{"key":"value"}'); // '{"key":"value"}'
+> ```
+
+<br/>
+
+`date(value)`
+
+Convert to date.
+
+> | Parameter | Default | Description                   |
+> | --------- | ------- | ----------------------------- |
+> | value     |         | Unknown<br/>Value to convert. |
+>
+> returns [Array] | Value
+>
+> Example:
+>
+> ```typescript
+> date('2025-01-01'); // 2025-01-01T00:00:00.000Z
 > ```
 
 ### Types
