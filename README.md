@@ -108,8 +108,8 @@ import { typof } from 'typof';
 
 Extract the valid types.
 
-> | Parameter | Default | Description                          |
-> | --------- | ------- | ------------------------------------ |
+> | Parameter | Default | Description                         |
+> | --------- | ------- | ----------------------------------- |
 > | value     |         | Unknown<br/>Value to extract types. |
 >
 > returns [Types]\[]
