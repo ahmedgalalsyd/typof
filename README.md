@@ -40,7 +40,7 @@
 
 ## About
 
-Infers types.
+Infer types.
 
 ## Features
 
