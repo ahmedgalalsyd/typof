@@ -46,7 +46,7 @@ Infer types.
 
 - Infers multiple types
 - Infers integer and float types
-- It infers the type from a string
+- Infers the type from a string
 - There are simple type converters
 
 ## Installation
