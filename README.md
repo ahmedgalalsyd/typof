@@ -89,8 +89,7 @@ typof
 ├── boolean(value)
 ├── object(value)
 ├── array(value)
-├── _null(value)
-├── _undefined(value)
+├── date(value)
 │
 └── type Types
 ```
@@ -134,6 +133,9 @@ Extract the valid types.
 >
 > typof('["test"]'); // [ 'string', 'array' ]
 > typof(['test']); // [ 'array' ]
+>
+> typof('2025-01-01'); // [ 'string', 'date' ]
+> typof(new Date('2025-01-01')); // [ 'object', 'date' ]
 >
 > typof('null'); // [ 'string, 'null' ]
 > typof(null); // [ 'null' ]

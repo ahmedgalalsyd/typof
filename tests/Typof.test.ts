@@ -17,8 +17,13 @@ if (string(typof({ key: 'value' })) !== '["object"]') throw new Error(`❌ Error
 if (string(typof('["test"]')) !== '["string","array"]') throw new Error(`❌ Error: ${string(typof('["test"]'))}`);
 if (string(typof(['test'])) !== '["array"]') throw new Error(`❌ Error: ${string(typof(['test']))}`);
 
+if (string(typof('2025-01-01')) !== '["string","date"]') throw new Error(`❌ Error: ${string(typof('2025-01-01'))}`);
+if (string(typof(new Date('2025-01-01'))) !== '["object","date"]') throw new Error(`❌ Error: ${string(typof(new Date('2025-01-01')))}`);
+
 if (string(typof('null')) !== '["string","null"]') throw new Error(`❌ Error: ${string(typof('null'))}`);
 if (string(typof(null)) !== '["null"]') throw new Error(`❌ Error: ${string(typof(null))}`);
 
 if (string(typof('undefined')) !== '["string","undefined"]') throw new Error(`❌ Error: ${string(typof('undefined'))}`);
 if (string(typof(undefined)) !== '["undefined"]') throw new Error(`❌ Error: ${string(typof(undefined))}`);
+
+console.log(typof(new Set()));
