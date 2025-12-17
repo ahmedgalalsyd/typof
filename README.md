@@ -117,7 +117,7 @@ Extract the valid types.
 > Example:
 >
 > ```typescript
-> typof('Hi!'); // [ 'string' ]
+> typof('test'); // [ 'string' ]
 >
 > typof('0'); // [ 'string', 'number', 'integer' ]
 > typof(0); // [ 'number', 'integer' ]

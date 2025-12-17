@@ -1,6 +1,6 @@
 import { typof, string } from '../src/main';
 
-if (string(typof('Hi!')) !== '["string"]') throw new Error(`❌ Error: ${string(typof('Hi!'))}`);
+if (string(typof('test')) !== '["string"]') throw new Error(`❌ Error: ${string(typof('test'))}`);
 
 if (string(typof('0')) !== '["string","number","integer"]') throw new Error(`❌ Error: ${string(typof('0'))}`);
 if (string(typof(0)) !== '["number","integer"]') throw new Error(`❌ Error: ${string(typof(0))}`);
