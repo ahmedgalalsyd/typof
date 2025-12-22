@@ -111,9 +111,9 @@ import { typof } from 'typof';
 
 Infers types.
 
-> | Parameter | Type    | Default | Description             |
-> | --------- | ------- | ------- | ----------------------- |
-> | value     | Unknown |         | Value to extract types. |
+> | Parameter | Type    | Default | Description           |
+> | --------- | ------- | ------- | --------------------- |
+> | value     | Unknown |         | Value to infer types. |
 >
 > returns [Types]\[]
 >
