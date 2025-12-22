@@ -98,8 +98,10 @@ export const array = <Value>(value: Value): unknown[] | Value => {
   } else return value;
 };
 
-export const date = (value: unknown) => {
-  return new Date(value as string);
+export const date = <Value>(value: Value): Date | Value => {
+  if (typof(value).includes('date')) {
+    return new Date(value as string);
+  } else return value;
 };
 
 export const _null = <Value>(value: Value): null | Value => {

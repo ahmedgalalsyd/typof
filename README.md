@@ -282,7 +282,7 @@ Convert to date.
 > | --------- | ------- | ------- | ----------------- |
 > | value     | Unknown |         | Value to convert. |
 >
-> returns [Date]
+> returns [Date] | Value
 >
 > Example:
 >
