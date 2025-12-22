@@ -58,19 +58,19 @@ Infer types.
 You can install it as follows.
 
 ```shell
-// NPM
+# NPM
 npm add typof
 
-// PNPM
+# PNPM
 pnpm add typof
 
-// Yarn
+# Yarn
 yarn add typof
 
-// Bun
+# Bun
 bun add typof
 
-// Deno
+# Deno
 deno add typof
 ```
 
