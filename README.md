@@ -149,7 +149,7 @@ Infer types.
 > if (typof(0).includes('integer')) console.log('This is an integer.');
 >
 > // Index zero always ensures reliable type checking. As the index increases, species depth also increases.
-> if (typof('0')[0] === 'string') console.log('This is a string.');
+> if (typof('0.5')[0] === 'string') console.log('This is a string.');
 > ```
 
 <br/>
