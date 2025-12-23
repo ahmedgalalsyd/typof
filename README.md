@@ -119,6 +119,12 @@ Infer types.
 > Example:
 >
 > ```typescript
+> // Tests are as follows. (Is this an integer?)
+> if (typof(0).includes('integer')) console.log('This is an integer.');
+>
+> // Index zero always ensures reliable type checking. As the index increases, species depth also increases.
+> if (typof('0.5')[0] === 'string') console.log('This is a string.');
+>
 > typof('test'); // [ "string" ]
 >
 > typof('0'); // [ "string", "number", "integer" ]
@@ -144,12 +150,6 @@ Infer types.
 >
 > typof('undefined'); // [ "string", "undefined" ]
 > typof(undefined); // [ "undefined" ]
->
-> // Tests are as follows. (Is this an integer?)
-> if (typof(0).includes('integer')) console.log('This is an integer.');
->
-> // Index zero always ensures reliable type checking. As the index increases, species depth also increases.
-> if (typof('0.5')[0] === 'string') console.log('This is a string.');
 > ```
 
 <br/>
