@@ -108,7 +108,7 @@ import { typof } from 'typof';
 
 `typof(value)`
 
-Infers types.
+Infer types.
 
 > | Parameter | Type    | Default | Description           |
 > | --------- | ------- | ------- | --------------------- |
