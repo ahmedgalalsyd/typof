@@ -64,8 +64,10 @@ export const typof = (value: unknown): Types[] => {
 };
 
 export const string = (value: unknown) => {
+  const types = typof(value);
+
   // eslint-disable-next-line no-restricted-syntax
-  return typof(value).includes('object') || typof(value).includes('array') ? JSON.stringify(value) : String(value);
+  return types.includes('object') || types.includes('array') ? JSON.stringify(value) : String(value);
 };
 
 export const number = (value: unknown) => {
@@ -77,7 +79,9 @@ export const integer = (value: unknown) => {
 };
 
 export const boolean = <Value>(value: Value): boolean | Value => {
-  if (typof(value).includes('boolean') && typof(value).includes('string')) {
+  const types = typof(value);
+
+  if (types.includes('boolean') && types.includes('string')) {
     if (value === 'true') {
       return true;
     } else if (value === 'false') {
@@ -87,21 +91,19 @@ export const boolean = <Value>(value: Value): boolean | Value => {
 };
 
 export const object = <Value>(value: Value): object | Value => {
-  if (typof(value).includes('object') && typof(value).includes('string')) {
-    return JSON.parse(value as string) as object;
-  } else return value;
+  const types = typof(value);
+
+  return types.includes('object') && types.includes('string') ? (JSON.parse(value as string) as object) : value;
 };
 
 export const array = <Value>(value: Value): unknown[] | Value => {
-  if (typof(value).includes('array') && typof(value).includes('string')) {
-    return JSON.parse(value as string) as unknown[];
-  } else return value;
+  const types = typof(value);
+
+  return types.includes('array') && types.includes('string') ? (JSON.parse(value as string) as unknown[]) : value;
 };
 
 export const date = <Value>(value: Value): Date | Value => {
-  if (typof(value).includes('date')) {
-    return new Date(value as string);
-  } else return value;
+  return typof(value).includes('date') ? new Date(value as string) : value;
 };
 
 export const _null = <Value>(value: Value): null | Value => {
