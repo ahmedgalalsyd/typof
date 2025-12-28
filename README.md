@@ -87,9 +87,9 @@ Typof
 ├── number(value)
 ├── integer(value)
 ├── boolean(value)
+├── date(value)
 ├── object(value)
 ├── array(value)
-├── date(value)
 ├── _null(value)
 ├── _undefined(value)
 │
@@ -136,14 +136,14 @@ Infer types.
 > typof('true'); // [ "string", "boolean" ]
 > typof(true); // [ "boolean" ]
 >
+> typof('2025-01-01'); // [ "string", "date" ]
+> typof(new Date('2025-01-01')); // [ "object", "date" ]
+>
 > typof('{"key":"value"}'); // [ "string", "object" ]
 > typof({ key: 'value' }); // [ "object" ]
 >
 > typof('["test"]'); // [ "string", "array" ]
 > typof(['test']); // [ "array" ]
->
-> typof('2025-01-01'); // [ "string", "date" ]
-> typof(new Date('2025-01-01')); // [ "object", "date" ]
 >
 > typof('null'); // [ "string", "null" ]
 > typof(null); // [ "null" ]
@@ -238,6 +238,26 @@ Convert to boolean.
 
 <br/>
 
+`date(value)`
+
+Convert to date.
+
+> | Parameter | Type    | Default | Description       |
+> | --------- | ------- | ------- | ----------------- |
+> | value     | Unknown |         | Value to convert. |
+>
+> returns [Date] | Value
+>
+> Example:
+>
+> ```typescript
+> date('2025-01-01'); // 2025-01-01T00:00:00.000Z
+> date(new Date('2025-01-01')); // 2025-01-01T00:00:00.000Z
+> date('test'); // "test"
+> ```
+
+<br/>
+
 `object(value)`
 
 Convert to object.
@@ -272,26 +292,6 @@ Convert to array.
 > ```typescript
 > array('["test"]'); // [ "test" ]
 > array('{"key":"value"}'); // '{"key":"value"}'
-> ```
-
-<br/>
-
-`date(value)`
-
-Convert to date.
-
-> | Parameter | Type    | Default | Description       |
-> | --------- | ------- | ------- | ----------------- |
-> | value     | Unknown |         | Value to convert. |
->
-> returns [Date] | Value
->
-> Example:
->
-> ```typescript
-> date('2025-01-01'); // 2025-01-01T00:00:00.000Z
-> date(new Date('2025-01-01')); // 2025-01-01T00:00:00.000Z
-> date('test'); // "test"
 > ```
 
 <br/>

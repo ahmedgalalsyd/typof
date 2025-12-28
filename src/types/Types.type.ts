@@ -1,1 +1,1 @@
-export type Types = 'string' | 'number' | 'integer' | 'float' | 'boolean' | 'object' | 'array' | 'date' | 'null' | 'undefined';
+export type Types = 'string' | 'number' | 'integer' | 'float' | 'boolean' | 'date' | 'object' | 'array' | 'null' | 'undefined';

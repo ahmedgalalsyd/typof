@@ -86,6 +86,10 @@ export const boolean = <Value>(value: Value): boolean | Value => {
   } else return value;
 };
 
+export const date = <Value>(value: Value): Date | Value => {
+  return typof(value).includes('date') ? new Date(value as string) : value;
+};
+
 export const object = <Value>(value: Value): object | Value => {
   const types = typof(value);
 
@@ -96,10 +100,6 @@ export const array = <Value>(value: Value): unknown[] | Value => {
   const types = typof(value);
 
   return types.includes('array') && types.includes('string') ? (JSON.parse(value as string) as unknown[]) : value;
-};
-
-export const date = <Value>(value: Value): Date | Value => {
-  return typof(value).includes('date') ? new Date(value as string) : value;
 };
 
 export const _null = <Value>(value: Value): null | Value => {
