@@ -27,11 +27,11 @@ export const typof = (value: unknown): Types[] => {
 
     if (value === 'true' || value === 'false') types.push('boolean');
 
+    if (isISODate(value)) types.push('date');
+
     if (isObject(value) && !Array.isArray(JSON.parse(value))) types.push('object');
 
     if (isObject(value) && Array.isArray(JSON.parse(value))) types.push('array');
-
-    if (isISODate(value)) types.push('date');
 
     if (value === 'null') types.push('null');
 

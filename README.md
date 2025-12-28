@@ -169,9 +169,9 @@ Convert to string.
 > ```typescript
 > string(0.5); // "0.5"
 > string(true); // "true"
+> string(new Date('2025-01-01')); // "2025-01-01T00:00:00.000Z"
 > string({ key: 'value' }); // '{"key":"value"}'
 > string(['test']); // '["test"]'
-> string(new Date('2025-01-01')); // "2025-01-01T00:00:00.000Z"
 > string(null); // "null"
 > string(undefined); // "undefined"
 > ```
