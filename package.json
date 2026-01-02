@@ -1,6 +1,6 @@
 {
   "name": "typof",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Infer types.",
   "license": "MIT",
   "homepage": "https://github.com/keift/typof",
@@ -28,14 +28,15 @@
   },
   "keywords": [
     "type",
+    "types",
     "typeof",
     "string",
     "number",
     "integer",
     "float",
     "boolean",
+    "date",
     "object",
-    "array",
-    "date"
+    "array"
   ]
 }
