@@ -1,6 +1,6 @@
 {
   "name": "typof",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Infer types.",
   "license": "MIT",
   "homepage": "https://github.com/keift/typof",
@@ -14,9 +14,7 @@
     "prettier": "prettier --write ./",
     "lint": "eslint ./"
   },
-  "dependencies": {
-    "@types/node": "latest"
-  },
+  "dependencies": {},
   "devDependencies": {
     "neatlint": "latest",
     "prettier": "latest",
